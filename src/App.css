@@ -1,3 +1,35 @@
 .backgroundimg {
   background-color: burlywood;
+  margin: 15px;
+}
+
+.ant-card-body {
+  padding: 16px;
+}
+
+.ant-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+.ant-card-actions>li>span>.anticon {
+  font-size: 25px;
+}
+
+.myantcard .ant-card-meta-detail {
+  padding: 25px;
+}
+
+
+.mycarousel img {
+  height: 250px;
+  width: 100%;
+}
+
+#components-layout-demo-fixed .logo {
+  width: 120px;
+  height: 31px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px 24px 16px 0;
+  float: left;
 }

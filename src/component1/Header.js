@@ -1,76 +1,63 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../src/App.css";
+import { Layout, Menu, Breadcrumb } from "antd";
+import Contentt from "./Content";
 
-export class Header extends Component {
+const { Header, Content, Footer } = Layout;
+
+class Headerr extends React.Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="#">
-            TechnoVision
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon" />
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item active">
-                <Link class="nav-link" to="/home">
-                  Home <span class="sr-only">(current)</span>
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link className="nav-link" to="/signup">
-                  SignUp
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link className="nav-link" to="/signin">
-                  Signin
-                </Link>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdownMenuLink"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Dropdown link
-                </a>
-                <div
-                  class="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <a class="dropdown-item" href="#">
-                    Action
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Another action
-                  </a>
-                  <a class="dropdown-item" href="#">
-                    Something else here
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Layout>
+          <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
+            <div className="logo" />
+            {/* <img
+                style={{
+                  height: "100px",
+                  width: "100px",
+                  position: "relative"
+                }}
+                src="https://www.onlinelogomaker.com/blog/wp-content/uploads/2017/06/shopping-online.jpg"
+              /> */}
+
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={["2"]}
+              style={{ lineHeight: "64px" }}
+            >
+              <Menu.Item key="1">
+                <Link to="/home">Home</Link>
+              </Menu.Item>
+              <Menu.Item key="2">
+                {" "}
+                <Link to="/signup">Sign Up</Link>
+              </Menu.Item>
+
+              <Menu.Item key="3">
+                <Link to="/signin">Sign In</Link>
+              </Menu.Item>
+            </Menu>
+          </Header>
+          <Content style={{ padding: "0 50px", marginTop: 64 }}>
+            <Breadcrumb style={{ margin: "16px 0" }}>
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>List</Breadcrumb.Item>
+              <Breadcrumb.Item>App</Breadcrumb.Item>
+            </Breadcrumb>
+            <div style={{ background: "#fff", padding: 24, minHeight: 380 }}>
+              <Contentt />
+            </div>
+          </Content>
+          <Footer style={{ textAlign: "center" }}>
+            Ant Design ©2018 Created by Ant UED
+          </Footer>
+        </Layout>
       </div>
     );
   }
 }
 
-export default Header;
+export default Headerr;

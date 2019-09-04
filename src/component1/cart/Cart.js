@@ -4,33 +4,45 @@ import Product from "./Product";
 const products = [
   {
     id: 1,
-    name: "Apple",
-    description: "Red Apples",
-    img: "https://tachyons.io/img/avatar_1.jpg",
-    price: 100
+    name: "Wrangler",
+    description: "Men Printed Casual Peter Pan Shirt",
+    img:
+      "http://assets.myntassets.com/assets/images/1362028/2018/9/12/31ded500-856d-46b4-8f47-f7534593a0481536752985693-Roadster-Men-Brown-Regular-Fit-Checked-Casual-Shirt-3231536752985447-1.jpg",
+    price: 1200
   },
 
   {
     id: 2,
-    name: "Apple",
-    description: "Red Apples",
-    img: "https://tachyons.io/img/avatar_1.jpg",
-    price: 100
+    name: "JacknJones",
+    description: "Men Printed Casual Peter Pan Shirt",
+    img:
+      "https://img.ltwebstatic.com/images2_pi/2018/07/09/15311256221214541777_thumbnail_600x799.jpg",
+    price: 1500
   },
 
   {
     id: 3,
-    name: "Apple",
-    description: "Red Apples",
-    img: "https://tachyons.io/img/avatar_1.jpg",
-    price: 100
+    name: "Levis",
+    description: "Men Printed Casual Peter Pan Shirt",
+    img:
+      "https://i.pinimg.com/originals/73/92/50/7392501565dc5d303f3c89fcbd3d4cb3.jpg",
+    price: 1000
   },
   {
     id: 4,
-    name: "Banana",
-    description: "I need those carbs",
-    img: "https://tachyons.io/img/avatar_1.jpg",
-    price: 100
+    name: "Adidas",
+    description: "Men Printed Casual Peter Pan Shirt",
+    img:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ41R8AeThMio6fVI6sN01eaqklyBFmSrXK1_9ZLyPItoG0In7R",
+    price: 2200
+  },
+  {
+    id: 5,
+    name: "UCB",
+    description: "Men Printed Casual Peter Pan Shirt",
+    img:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1l9PiZD-XHTRkEsfOAJFH0V5md7XfVb0HqoVSEg1ejF2kSMa3eg",
+    price: 2000
   }
 ];
 
@@ -42,7 +54,7 @@ class Cart extends React.Component {
       cart: [
         {
           id: 4,
-          name: "Banana",
+          name: "Adidas",
           description: "I need those carbs",
           img: "https://tachyons.io/img/avatar_1.jpg",
           price: 100,
@@ -76,8 +88,12 @@ class Cart extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Cart Page</h1>
+      <div className="pa3 pa5-ns flex flex-wrap">
+        <h1>Welcome {localStorage.getItem("name")}</h1>
+        {console.log(localStorage)}
+        {products.map(p => (
+          <Product key={p.id} {...p} addFunc={this.handleAddFunc.bind(this)} />
+        ))}
         <ul>
           {this.state.cart.map(c => (
             <li>
@@ -85,10 +101,6 @@ class Cart extends React.Component {
             </li>
           ))}
         </ul>
-
-        {products.map(p => (
-          <Product key={p.id} {...p} addFunc={this.handleAddFunc.bind(this)} />
-        ))}
       </div>
     );
   }
