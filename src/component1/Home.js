@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import Cart from "./cart/Cart";
+import Casualshirts from "./Casualshirts";
 
 function Protected({ component: Component, ...rest }) {
   console.log("$$$$$$$$", localStorage.getItem("isLoggedIn"));
@@ -72,6 +73,7 @@ export class Home extends Component {
           <Protected exact path="/cart" component={Cart} />
           <Route exact path="/signin" component={SignIn} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path = "/casualshirts" component= {Casualshirts}/>
         </Router>
       </div>
     );
