@@ -52,10 +52,10 @@ export default class Contentt extends Component {
                     // style={{ width: 240 }}
                     cover={
                       <img
-                        onClick={this.cart}
+                        // onClick={this.cart}
                         alt="example"
                         src={item.imgSrc}
-                        height="200px"
+                        height="230px"
                       />
                     }
                   >

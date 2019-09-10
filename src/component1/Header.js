@@ -41,16 +41,16 @@ class Headerr extends React.Component {
                 <Menu.Item key="3">
                   <Link to="/signin">Sign In</Link>
                 </Menu.Item>
-                <Menu.Item key="4">
-                  <Link to="/casualshirts"> Filters </Link>
-                </Menu.Item>
               </Menu>
             </Header>
             <Content style={{ padding: "0 50px", marginTop: 64 }}>
               <Breadcrumb style={{ margin: "16px 0" }}>
                 <Breadcrumb.Item>Home</Breadcrumb.Item>
                 <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
+                <Breadcrumb.Item>
+                  {" "}
+                  <Link to="/casualshirts"> Filters </Link>
+                </Breadcrumb.Item>
               </Breadcrumb>
               <div style={{ background: "#fff", padding: 24, minHeight: 380 }}>
                 <Contentt />

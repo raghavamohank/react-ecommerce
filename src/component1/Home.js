@@ -70,10 +70,11 @@ export class Home extends Component {
               );
             }}
           /> */}
+          <Route path="/" component={Home} />
           <Protected exact path="/cart" component={Cart} />
-          <Route exact path="/signin" component={SignIn} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path = "/casualshirts" component= {Casualshirts}/>
+          <Route path="/signin" component={SignIn} />
+          <Route path="/signup" component={SignUp} />
+          <Route path="/casualshirts" component={Casualshirts} />
         </Router>
       </div>
     );
